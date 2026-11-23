@@ -36,8 +36,6 @@ Foram utilizadas 5.600 partidas públicas do [PGN Mentor](https://www.pgnmentor.
 
 Top-1 mede coincidência da primeira escolha com a jogada registrada; top-3 mede sua presença entre as três primeiras opções. A referência uniforme entre lances legais teria top-1 esperado de 5,02% no teste completo. Esses números não representam Elo.
 
-![Perda de treino e validação por época](runs/aronian_v1/learning_curve.svg)
-
 A rede tem dificuldade com jogadas incomuns e pode deixar de capturar uma dama exposta. Ela usa o que aprendeu, sem calcular sequências futuras ou ganhos de material. Os resultados completos estão nas [métricas](runs/aronian_v1/test_metrics.json), no [histórico](runs/aronian_v1/history.json) e nos [três exemplos táticos](reports/aronian_v1/tactical_probes.json). Esses exemplos são observações, não uma avaliação geral de força.
 
 ## Reproduzir o experimento
