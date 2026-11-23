@@ -4,7 +4,7 @@ Trabalho 2 de Inteligência Artificial II — AMF, 2026/02. **Aluno: Bernardo. M
 
 ## Problema e solução
 
-O projeto explora uma necessidade educacional: estudar padrões de decisão de um jogador a partir de suas partidas, em uma experiência interativa. Para isso, foi treinada do zero uma rede que prevê os lances do GM Levon Aronian e foi criado um tabuleiro web para jogar contra ela. O valor do protótipo é permitir experimentar a abordagem e observar seus resultados e limites; a fidelidade ao estilo do jogador ainda não foi comprovada.
+O objetivo é estudar as decisões do GM Levon Aronian a partir de suas partidas. Uma rede treinada do zero tenta prever seus lances e pode ser enfrentada em um tabuleiro web. O projeto permite testar essa ideia na prática, mas ainda não comprova uma reprodução fiel do estilo do jogador.
 
 ## Executar o jogo
 
@@ -19,7 +19,9 @@ python -m venv .venv
 .\jogar.cmd
 ```
 
-O navegador abre em [http://127.0.0.1:8000](http://127.0.0.1:8000). Escolha brancas ou pretas e mova as peças por clique ou arraste. Mantenha a janela do programa aberta; **Ctrl+C** encerra o servidor. O modelo treinado acompanha o repositório, e o jogo não precisa dos PGNs nem de internet após a instalação. [Print e instruções do jogo](docs/JOGAR_WEB.md).
+O navegador abre em [http://127.0.0.1:8000](http://127.0.0.1:8000). Escolha brancas ou pretas e mova as peças por clique ou arraste. Mantenha a janela do programa aberta; **Ctrl+C** encerra o servidor. O modelo treinado já está no repositório. Depois da instalação, o jogo não precisa dos PGNs nem de internet.
+
+![Partida contra o modelo na interface web](docs/images/jogo-web.jpg)
 
 ## Abordagem e resultados
 
@@ -36,7 +38,7 @@ Top-1 mede coincidência da primeira escolha com a jogada registrada; top-3 mede
 
 ![Perda de treino e validação por época](runs/aronian_v1/learning_curve.svg)
 
-A rede apresenta dificuldades diante de jogadas incomuns, inclusive ao capturar uma dama exposta. Ela escolhe pela pontuação aprendida, sem busca de variantes ou avaliação explícita de ganho material. Os exemplos e suas limitações estão na [análise de resultados](docs/RESULTADOS.md).
+A rede tem dificuldade com jogadas incomuns e pode deixar de capturar uma dama exposta. Ela usa o que aprendeu, sem calcular sequências futuras ou ganhos de material. Os resultados completos estão nas [métricas](runs/aronian_v1/test_metrics.json), no [histórico](runs/aronian_v1/history.json) e nos [três exemplos táticos](reports/aronian_v1/tactical_probes.json). Esses exemplos são observações, não uma avaliação geral de força.
 
 ## Reproduzir o experimento
 
@@ -50,7 +52,9 @@ Depois da instalação acima, execute na raiz do projeto:
 .\.venv\Scripts\python.exe -m aronian.evaluate --run runs/reproducao
 ```
 
-`runs/reproducao` deve ser uma pasta nova; o treino pode terminar antes de 30 épocas. A execução fornecida em `runs/aronian_v1` é preservada. PGNs, cache, ambiente virtual e checkpoints de retomada ficam fora do Git. A fonte pode ser atualizada: os hashes da coleta original estão registrados. Veja [dataset](docs/DATASET.md) e [treinamento e retomada](docs/TREINAMENTO_LOCAL.md).
+Use uma pasta nova em `runs/reproducao`. O treino pode terminar antes de 30 épocas, após cinco épocas sem melhora na validação. Para interromper, pressione **Ctrl+C** e aguarde o salvamento; para continuar, repita o comando de treino com `--resume`. A configuração está em [local_cpu.json](configs/local_cpu.json).
+
+Os pesos entregues ficam em `runs/aronian_v1`. PGNs, cache, ambiente virtual e checkpoints de retomada ficam fora do Git. O download dos PGNs pode mudar; as contagens e os hashes originais estão em [dataset_report.json](reports/aronian_v1/dataset_report.json).
 
 Para verificar o código:
 
@@ -64,6 +68,6 @@ Para verificar o código:
 - `scripts/`: coleta e verificação dos PGNs; `configs/`: configuração do treino.
 - `web/dist/`: tabuleiro e peças; `tests/`: testes automatizados.
 - `runs/aronian_v1/`: pesos, métricas, histórico e curva do experimento entregue.
-- `reports/aronian_v1/`: metadados do dataset e sondagens táticas; `docs/`: guias e análise.
+- `reports/aronian_v1/`: dados da coleta e exemplos táticos; `docs/images/`: print do jogo.
 
 Próximos passos: ampliar a diversidade das posições e avaliar melhor a robustez tática e a fidelidade ao jogador.

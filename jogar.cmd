@@ -3,7 +3,7 @@ setlocal
 cd /d "%~dp0"
 set PYTHONUTF8=1
 if not exist ".venv\Scripts\python.exe" (
-    echo Ambiente Python nao encontrado. Consulte docs\JOGAR_WEB.md.
+    echo Ambiente Python nao encontrado. Consulte README.md.
     pause
     exit /b 1
 )
