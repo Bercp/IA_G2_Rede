@@ -1,0 +1,9 @@
+{
+  "python": "3.13.7",
+  "torch": "2.15.0+cpu",
+  "device": "cpu",
+  "encoding": "aronian-19planes-20480-v1",
+  "cache_id": "2cc537c1613a40bd0c965efb801a2999b2711603e815fd2ef32209d7af30fab2",
+  "diagnostic_only": false,
+  "parameters": 53216
+}

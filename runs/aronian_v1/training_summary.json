@@ -1,0 +1,8 @@
+{
+  "epochs_completed": 14,
+  "steps": 44842,
+  "best_validation_loss": 2.579759546791994,
+  "early_stopped": true,
+  "diagnostic_only": false,
+  "this_session_seconds": 1920.9779765999992
+}

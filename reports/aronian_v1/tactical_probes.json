@@ -1,0 +1,147 @@
+{
+  "created_at_utc": "2026-11-23T06:16:57.033791+00:00",
+  "weights_sha256": "14ffd0b85178c144a8f8f170f7b29fa0714fb41821d46223dd9eb54d25772176",
+  "model_epoch": 9,
+  "diagnostic_only": false,
+  "method": "Greedy policy inference, temperature=0, legal-move filtering, CPU",
+  "limitations": "Three descriptive examples; no statistical tactical accuracy or engine evaluation.",
+  "cases": [
+    {
+      "name": "white_queen_on_h4",
+      "sequence_san": "1. e4 e5 2. Qh5 Nc6 3. Qh4",
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "d1h5",
+        "b8c6",
+        "h5h4"
+      ],
+      "examined_capture_uci": "d8h4",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P2Q/8/PPPP1PPP/RNB1KBNR b KQkq - 3 3",
+      "in_check": false,
+      "examined_capture_san": "Qxh4",
+      "examined_capture_legal": true,
+      "examined_capture_rank": 18,
+      "examined_capture_probability": 0.0009736514184623957,
+      "chosen_move_uci": "g8f6",
+      "top5": [
+        {
+          "move_uci": "g8f6",
+          "move_san": "Nf6",
+          "probability": 0.8828547596931458
+        },
+        {
+          "move_uci": "g8e7",
+          "move_san": "Nge7",
+          "probability": 0.02474055625498295
+        },
+        {
+          "move_uci": "d7d6",
+          "move_san": "d6",
+          "probability": 0.01833951286971569
+        },
+        {
+          "move_uci": "f8c5",
+          "move_san": "Bc5",
+          "probability": 0.011847715824842453
+        },
+        {
+          "move_uci": "a7a6",
+          "move_san": "a6",
+          "probability": 0.011243891902267933
+        }
+      ]
+    },
+    {
+      "name": "black_queen_on_h4",
+      "sequence_san": "1. e4 e5 2. Nf3 Qh4",
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "g1f3",
+        "d8h4"
+      ],
+      "examined_capture_uci": "f3h4",
+      "fen": "rnb1kbnr/pppp1ppp/8/4p3/4P2q/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+      "in_check": false,
+      "examined_capture_san": "Nxh4",
+      "examined_capture_legal": true,
+      "examined_capture_rank": 24,
+      "examined_capture_probability": 0.000162472075317055,
+      "chosen_move_uci": "f1c4",
+      "top5": [
+        {
+          "move_uci": "f1c4",
+          "move_san": "Bc4",
+          "probability": 0.3701467514038086
+        },
+        {
+          "move_uci": "f1b5",
+          "move_san": "Bb5",
+          "probability": 0.2968614101409912
+        },
+        {
+          "move_uci": "f3e5",
+          "move_san": "Nxe5",
+          "probability": 0.16873620450496674
+        },
+        {
+          "move_uci": "d2d4",
+          "move_san": "d4",
+          "probability": 0.043673381209373474
+        },
+        {
+          "move_uci": "d2d3",
+          "move_san": "d3",
+          "probability": 0.02946414425969124
+        }
+      ]
+    },
+    {
+      "name": "white_queen_on_e5_with_check",
+      "sequence_san": "1. e4 e5 2. Qh5 Nc6 3. Qxe5+",
+      "moves_uci": [
+        "e2e4",
+        "e7e5",
+        "d1h5",
+        "b8c6",
+        "h5e5"
+      ],
+      "examined_capture_uci": "c6e5",
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4Q3/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 0 3",
+      "in_check": true,
+      "examined_capture_san": "Nxe5",
+      "examined_capture_legal": true,
+      "examined_capture_rank": 1,
+      "examined_capture_probability": 0.787139356136322,
+      "chosen_move_uci": "c6e5",
+      "top5": [
+        {
+          "move_uci": "c6e5",
+          "move_san": "Nxe5",
+          "probability": 0.787139356136322
+        },
+        {
+          "move_uci": "g8e7",
+          "move_san": "Nge7",
+          "probability": 0.07560303807258606
+        },
+        {
+          "move_uci": "d8e7",
+          "move_san": "Qe7",
+          "probability": 0.060530681163072586
+        },
+        {
+          "move_uci": "c6e7",
+          "move_san": "Nce7",
+          "probability": 0.046665314584970474
+        },
+        {
+          "move_uci": "f8e7",
+          "move_san": "Be7",
+          "probability": 0.0300616268068552
+        }
+      ]
+    }
+  ]
+}

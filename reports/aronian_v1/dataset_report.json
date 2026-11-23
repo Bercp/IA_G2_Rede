@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-09T23:01:44.078071+00:00",
+  "player": "Levon Aronian",
+  "accepted_normalized_aliases": [
+    "aronianl",
+    "aronianlevon",
+    "levonaronian"
+  ],
+  "source": {
+    "url": "https://www.pgnmentor.com/players/Aronian.zip",
+    "catalog_url": "https://www.pgnmentor.com/files.html",
+    "first_recorded_at_utc": "2026-11-09T22:56:36.624514+00:00",
+    "zip_sha256": "d9fa17c7a3dab9c76627e93d00bf0c6f70dbe6deb12289b71a4c34ec4601fcc5",
+    "pgn_sha256": "fac0122d3c55f8a2b09cb79dc00b1e9a906a059267fe6f5dafa0a7416898c430",
+    "pgn_bytes": 4061200,
+    "availability": "Public free download; no explicit dataset redistribution license recorded."
+  },
+  "encoding": "utf-8-sig",
+  "header_spacing_repairs": 1,
+  "counts": {
+    "source_records": 5609,
+    "accepted_games": 5600,
+    "target_moves": 255570,
+    "excluded_records": 9,
+    "excluded_target_identity_missing_or_ambiguous": 9
+  },
+  "games_by_split": {
+    "train": 4491,
+    "test": 557,
+    "validation": 552
+  },
+  "moves_by_split": {
+    "train": 204952,
+    "test": 25741,
+    "validation": 24877
+  },
+  "moves_by_color": {
+    "white": 129326,
+    "black": 126244
+  },
+  "games_by_year": {
+    "1993": 11,
+    "1994": 23,
+    "1995": 40,
+    "1996": 86,
+    "1997": 9,
+    "1998": 30,
+    "1999": 67,
+    "2000": 58,
+    "2001": 74,
+    "2002": 56,
+    "2003": 57,
+    "2004": 88,
+    "2005": 125,
+    "2006": 89,
+    "2007": 120,
+    "2008": 120,
+    "2009": 165,
+    "2010": 132,
+    "2011": 93,
+    "2012": 104,
+    "2013": 145,
+    "2014": 195,
+    "2015": 143,
+    "2016": 198,
+    "2017": 241,
+    "2018": 331,
+    "2019": 301,
+    "2020": 254,
+    "2021": 455,
+    "2022": 390,
+    "2023": 468,
+    "2024": 430,
+    "2025": 388,
+    "2026": 114
+  },
+  "games_missing_metadata": {
+    "TimeControl": 5600,
+    "WhiteElo": 40,
+    "BlackElo": 50
+  },
+  "split_method": "SHA256 of full move-sequence group; approximately 80/10/10; seed aronian-v1",
+  "limitations": [
+    "Career games include childhood and all available time controls; not restricted to GM-title period.",
+    "Different games can share positions/openings across splits; this is not a position-disjoint evaluation.",
+    "FEN alone has no repetition history; reconstruct it using games.moves_uci[:ply-1].",
+    "Source coverage is incomplete and source metadata may be inaccurate."
+  ]
+}

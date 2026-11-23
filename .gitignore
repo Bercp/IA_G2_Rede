@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+data/
+runs/*
+!runs/aronian_v1/
+runs/aronian_v1/*
+!runs/aronian_v1/best_weights.pt
+!runs/aronian_v1/config.json
+!runs/aronian_v1/environment.json
+!runs/aronian_v1/history.json
+!runs/aronian_v1/learning_curve.svg
+!runs/aronian_v1/test_metrics.json
+!runs/aronian_v1/training_summary.json
+exports/
+.pytest_cache/
