@@ -8,16 +8,16 @@ O objetivo é estudar as decisões do GM Levon Aronian a partir de suas partidas
 
 ## Executar o jogo
 
-Ambiente utilizado: **Python 3.13, PyTorch e CPU**. No PowerShell:
+Para jogar, use **Python 3.10 a 3.13 de 64 bits**. O instalador prepara o ambiente e confere o modelo. No terminal do Windows:
 
 ```powershell
 git clone https://github.com/Bercp/IA_G2_Rede.git
 cd IA_G2_Rede
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
-.\.venv\Scripts\python.exe -m pip install -r requirements-training.txt
+python scripts\install.py
 .\jogar.cmd
 ```
+
+Se baixou o ZIP, entre na pasta que contém este README e comece por `python scripts\install.py`; não precisa clonar outra cópia. Se a instalação mostrar erro, resolva antes de abrir o jogo.
 
 O navegador abre em [http://127.0.0.1:8000](http://127.0.0.1:8000). Escolha brancas ou pretas e mova as peças por clique ou arraste. Mantenha a janela do programa aberta; **Ctrl+C** encerra o servidor. O modelo treinado já está no repositório. Depois da instalação, o jogo não precisa dos PGNs nem de internet.
 
@@ -40,9 +40,10 @@ A rede tem dificuldade com jogadas incomuns e pode deixar de capturar uma dama e
 
 ## Reproduzir o experimento
 
-Depois da instalação acima, execute na raiz do projeto:
+O treino original usou Python 3.13 e PyTorch 2.15.0. Para reproduzi-lo, use uma `.venv` com **Python 3.13** e execute na raiz do projeto:
 
 ```powershell
+.\.venv\Scripts\python.exe scripts\install.py --training
 .\.venv\Scripts\python.exe scripts\build_dataset.py
 .\.venv\Scripts\python.exe scripts\verify_dataset.py
 .\.venv\Scripts\python.exe -m aronian.data
